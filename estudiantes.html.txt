@@ -1,53 +1,174 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Estudiantes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller en clases | Estudiantes</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #171717;
+            background: #f7f5f2;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 32px 40px;
+        }
+
+        .page {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin: 0 0 24px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 400;
+        }
+
+        .intro,
+        .instructions {
+            font-size: clamp(18px, 2.2vw, 26px);
+            line-height: 1.17;
+        }
+
+        .intro p {
+            margin: 0;
+        }
+
+        .workshop-grid {
+            display: grid;
+            grid-template-columns: minmax(360px, 0.95fr) minmax(420px, 1.6fr);
+            gap: 28px;
+            align-items: start;
+        }
+
+        .instructions h2,
+        .instructions h3 {
+            margin: 0;
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        .instructions section {
+            margin-top: 2px;
+        }
+
+        .instructions ul,
+        .instructions ol {
+            margin: 0;
+            padding-left: 36px;
+        }
+
+        .instructions li {
+            padding-left: 2px;
+        }
+
+        .student-table-wrap {
+            padding-top: 236px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #f5eae7;
+            font-size: clamp(18px, 2.1vw, 25px);
+        }
+
+        th,
+        td {
+            padding: 6px 11px;
+            border: 2px solid #fff;
+            text-align: left;
+            font-weight: 400;
+        }
+
+        @media (max-width: 760px) {
+            body {
+                padding: 20px 18px 32px;
+            }
+
+            .workshop-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .student-table-wrap {
+                padding-top: 0;
+            }
+        }
+    </style>
 </head>
 <body>
+    
 
-    <!-- A. Una lista no ordenada -->
-    <h3>Cursos que ofrece la carrera:</h3>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>PHP</li>
-    </ul>
+        <div class="workshop-grid">
+            <div class="instructions">
+                <section aria-labelledby="lista-cursos">
+                    <h2 id="lista-cursos">Lista no ordenada</h2>
+                    <h3>Cursos que ofrece la carrera:</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                    </ul>
+                </section>
 
-    <!-- B. Una lista ordenada -->
-    <h3>Pasos para crear una página web:</h3>
-    <ol>
-        <li>Crear el archivo HTML.</li>
-        <li>Escribir la estructura.</li>
-        <li>Agregar contenido.</li>
-        <li>Guardar el archivo.</li>
-        <li>Abrirlo en el navegador.</li>
-    </ol>
+                <section aria-labelledby="pasos-pagina">
+                    <h2 id="pasos-pagina">Lista ordenada</h2>
+                    <h3>Pasos para crear una página web:</h3>
+                    <ol>
+                        <li>Crear el archivo HTML.</li>
+                        <li>Escribir la estructura.</li>
+                        <li>Agregar contenido.</li>
+                        <li>Guardar el archivo.</li>
+                        <li>Abrirlo en el navegador.</li>
+                    </ol>
+                </section>
 
-    <!-- C. Una tabla -->
-    <table border="1">
-        <tr>
-            <th>Código</th>
-            <th>Estudiante</th>
-            <th>Carrera</th>
-        </tr>
-        <tr>
-            <td>001</td>
-            <td>Ana</td>
-            <td>Informática</td>
-        </tr>
-        <tr>
-            <td>002</td>
-            <td>Luis</td>
-            <td>Sistemas</td>
-        </tr>
-        <tr>
-            <td>003</td>
-            <td>María</td>
-            <td>Informática</td>
-        </tr>
-    </table>
+                <section aria-labelledby="tabla-estudiantes">
+                    <h2 id="tabla-estudiantes">Tabla</h2>
+                </section>
+            </div>
 
+            <div class="student-table-wrap">
+                <table aria-labelledby="tabla-estudiantes">
+                    <thead>
+                        <tr>
+                            <th scope="col">Código</th>
+                            <th scope="col">Estudiante</th>
+                            <th scope="col">Carrera</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>O01</td>
+                            <td>Ana</td>
+                            <td>Informática</td>
+                        </tr>
+                        <tr>
+                            <td>O02</td>
+                            <td>Luis</td>
+                            <td>Sistemas</td>
+                        </tr>
+                        <tr>
+                            <td>O03</td>
+                            <td>María</td>
+                            <td>Informática</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
